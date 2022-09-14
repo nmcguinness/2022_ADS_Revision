@@ -1,9 +1,31 @@
-// ADS_Revision.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+
+using namespace std;
+
+//function declaration
+int add(int x, int y);
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //functions - add, divide
+    cout << add(3, 4) << endl;
+
+    //move functions into header
+    //look at swap - ptrs, reference, refs to pointers
 }
+
+//function definition
+int add(int x, int y)
+{
+    return x + y;
+}
+
+float divide(float x, float y)
+{
+    return x / y;
+}
+
+
+
+
+
