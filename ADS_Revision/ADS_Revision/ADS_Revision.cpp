@@ -23,6 +23,26 @@ int main()
 
     //move functions into header
     //look at swap - ptrs, reference, refs to pointers
+    
+    //swapping using pass by copy
+    int a = 10;
+    int b = 100;
+    swap(a, b);
+    cout << "a:" << a << ",b:" << b << endl;
+
+    //swapping using pass by reference
+    a = 500;
+    b = 9999;
+    swap_ref(a, b);
+    cout << "a:" << a << ",b:" << b << endl;
+
+    a = 500;
+    b = 9999;
+    int* pA = &a;
+    int* pB = &b;
+    swap_ptr(pA, pB);
+    cout << "pA:" << *pA << ",pB:" << *pB << endl;
+
 }
 
 ////function definition
