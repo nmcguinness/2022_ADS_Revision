@@ -2,6 +2,8 @@
 #include <iostream>
 using namespace std;
 
+void print(int* pArray, int length);
+
 //demo array instanciation
 void demoArrayInstanciation1()
 {
@@ -31,18 +33,48 @@ void demoArrayInstanciation3()
 	cin >> dimension;
 	int* pArray = new int[dimension]; //get a pointer to 4 spaces
 	
+	//pArray is just the address of the first integer in array
+	cout << pArray << endl;
+
 	for (int i = 0; i < dimension; i++)
 	{
 		cout << "enter year " << i << endl;
 		cin >> pArray[i];
 	}
 
-	for (int i = 0; i < dimension; i++)
-	{
-		cout << pArray[i] << endl;
-	}
+	//call our new print function
+	print(pArray, dimension);
 
 	delete[] pArray; //free space
 }
+
+void print(int *pArray, int length)
+{
+	for (int i = 0; i < length; i++)
+	{
+		cout << pArray[i] << endl;
+	}
+}
+
+//randomize - takes ptr to array of ints and initializes
+//using the c++ random function using rand()
+void randomize(int* pArray, int length)
+{
+	for (int i = 0; i < length; i++)
+	{
+		pArray[i] = rand();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
