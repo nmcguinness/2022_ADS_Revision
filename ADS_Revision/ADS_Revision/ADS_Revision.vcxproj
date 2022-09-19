@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="ADS_Revision.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="revision.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

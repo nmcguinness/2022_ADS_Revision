@@ -1,10 +1,11 @@
 #include <iostream>
+#include "revision.h"
 
 using namespace std;
 
 //function declaration
-int add(int x, int y); //semi-colon
-double divide(double x, double y);
+//int add(int x, int y); //semi-colon
+//double divide(double x, double y);
 
 int main()
 {
@@ -24,21 +25,21 @@ int main()
     //look at swap - ptrs, reference, refs to pointers
 }
 
-//function definition
-int add(int x, int y)
-{
-    return x + y;
-}
-
-double divide(double x, double y)
-{
-    if (y == 0) throw invalid_argument("Invalid denominator!");
-   /* if (y == 0)
-        throw "Invalid denominator!";*/
- /*   if (y == 0)
-        return 0;*/
-    return x / y;
-}
+////function definition
+//int add(int x, int y)
+//{
+//    return x + y;
+//}
+//
+//double divide(double x, double y)
+//{
+//    if (y == 0) throw invalid_argument("Invalid denominator!");
+//   /* if (y == 0)
+//        throw "Invalid denominator!";*/
+// /*   if (y == 0)
+//        return 0;*/
+//    return x / y;
+//}
 
 
 
