@@ -63,3 +63,21 @@ int compare(int* pFirst, int lengthFirst, int* pSecond, int lengthSecond)
 	}
 	return lengthFirst;
 }
+
+//compare two arrays of ints to see if they are reverse of one another
+bool compare_reverse(int* pFirst, int lengthFirst, int* pSecond, int lengthSecond)
+{
+	//check for nullptr
+	//check for non-equal lengths
+	//read up on first, read down on second
+}
+
+//concat two arrays of same type
+int* concat(int* pFirst, int lengthFirst, int* pSecond, int lengthSecond)
+{
+	//check for nullptr
+	//make a new array - of what size?
+	//add pFirst to new array
+	//add pSecond to new array
+	//return new array address
+}

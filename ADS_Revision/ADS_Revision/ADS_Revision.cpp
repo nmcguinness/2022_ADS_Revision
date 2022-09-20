@@ -13,6 +13,7 @@ void demoArrayInstanciation1();
 void demoArrayInstanciation2();
 void demoArrayUsingPointer();
 void demoArrayFunctions();
+void demoArrayReverseAndCompare();
 
 int main()
 {
@@ -34,10 +35,28 @@ int main()
 	//cout << endl << "demoArrayInstanciation2()..." << endl;
 	//demoArrayInstanciation2();
 
-	cout << endl << "demoArrayFunctions()..." << endl;
-	demoArrayFunctions();
+	/*cout << endl << "demoArrayFunctions()..." << endl;
+	demoArrayFunctions();*/
+
+	cout << endl << "demoArrayReverseAndCompare()..." << endl;
+	demoArrayReverseAndCompare();
 }
 
+void demoArrayReverseAndCompare()
+{
+	int* pArray1 = new int[3];
+	pArray1[0] = 10; pArray1[1] = 100; pArray1[2] = 1000;
+
+	int* pArray2 = new int[3];
+	pArray2[0] = 10; pArray2[1] = 100; pArray2[2] = 1000;
+
+	int result = compare(pArray1, 3, pArray2, 3);
+
+	if (result == 3)
+		cout << "No difference exists in the two arrays" << endl;
+	else
+		cout << "Arrays are different at index " << result << endl;
+}
 void demoSimpleFunction()
 {
 	cout << add(3, 4) << endl;
