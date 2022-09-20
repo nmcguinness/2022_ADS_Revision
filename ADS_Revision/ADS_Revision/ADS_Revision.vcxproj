@@ -130,6 +130,7 @@
     <ClCompile Include="ADS_Revision.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ADS_Revision.h" />
     <ClInclude Include="arrayRevision.h" />
     <ClInclude Include="revision.h" />
   </ItemGroup>
