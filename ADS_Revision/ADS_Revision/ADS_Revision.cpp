@@ -16,37 +16,26 @@ void demoArrayFunctions();
 
 int main()
 {
-	cout << endl << "demoSimpleFunction()..." << endl;
-	demoSimpleFunction();
+	//cout << endl << "demoSimpleFunction()..." << endl;
+	//demoSimpleFunction();
 
-	cout << endl << "demoTryCatch()..." << endl;
-	demoTryCatch();
+	//cout << endl << "demoTryCatch()..." << endl;
+	//demoTryCatch();
 
-	cout << endl << "demoSwaps()..." << endl;
-	demoSwaps();
+	//cout << endl << "demoSwaps()..." << endl;
+	//demoSwaps();
 
-	cout << endl << "demoArrayUsingPointer()..." << endl;
-	demoArrayUsingPointer();
+	//cout << endl << "demoArrayUsingPointer()..." << endl;
+	//demoArrayUsingPointer();
 
-	cout << endl << "demoArrayInstanciation1()..." << endl;
-	demoArrayInstanciation1();
+	//cout << endl << "demoArrayInstanciation1()..." << endl;
+	//demoArrayInstanciation1();
 
-	cout << endl << "demoArrayInstanciation2()..." << endl;
-	demoArrayInstanciation2();
+	//cout << endl << "demoArrayInstanciation2()..." << endl;
+	//demoArrayInstanciation2();
 
 	cout << endl << "demoArrayFunctions()..." << endl;
 	demoArrayFunctions();
-}
-
-//declare array, initialize to default, return address of 1st int
-int* initialize(int length, int defaultValue)
-{
-	int* pArray = new int[length];
-
-	for (int i = 0; i < length; i++)
-		pArray[i] = defaultValue;
-
-	return pArray;
 }
 
 void demoSimpleFunction()
@@ -132,7 +121,7 @@ void demoArrayUsingPointer()
 	//call our new print function
 	print(pArray, dimension);
 
-	delete[] pArray; //free space
+	delete[] pArray; //free space - otherwise memory leak!
 }
 
 void demoArrayFunctions()
@@ -146,4 +135,12 @@ void demoArrayFunctions()
 	int* myNewArray = initialize(5, 100);
 	print(myNewArray, 5);
 	delete[] myNewArray;
+
+	try {
+		print(nullptr, 0);
+	}
+	catch (invalid_argument e)
+	{
+		cout << e.what() << endl;
+	}
 }
