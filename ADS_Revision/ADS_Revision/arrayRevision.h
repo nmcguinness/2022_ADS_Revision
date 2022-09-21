@@ -68,9 +68,20 @@ int compare(int* pFirst, int lengthFirst, int* pSecond, int lengthSecond)
 bool compare_reverse(int* pFirst, int lengthFirst, int* pSecond, int lengthSecond)
 {
 	//check for nullptr
+	if (pFirst == nullptr || pSecond == nullptr)
+		throw invalid_argument("One or more array is null!");
+
 	//check for non-equal lengths
+	if (lengthFirst != lengthSecond)
+		throw invalid_argument("Arrays are unequal in length!");
+
 	//read up on first, read down on second
-	return false;
+	for (int i = 0; i < lengthFirst; i++)
+	{
+		if (pFirst[i] != pSecond[lengthFirst - 1 - i])
+			return false;
+	}
+	return true;
 }
 
 //concat two arrays of same type

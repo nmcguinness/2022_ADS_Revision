@@ -13,7 +13,8 @@ void demoArrayInstanciation1();
 void demoArrayInstanciation2();
 void demoArrayUsingPointer();
 void demoArrayFunctions();
-void demoArrayReverseAndCompare();
+void demoArrayCompare();
+void demoArrayPrintReverse();
 void demoArrayCompareReverse();
 void demoArrayConcat();
 
@@ -37,11 +38,13 @@ int main()
 	//cout << endl << "demoArrayInstanciation2()..." << endl;
 	//demoArrayInstanciation2();
 
-	/*cout << endl << "demoArrayFunctions()..." << endl;
-	demoArrayFunctions();*/
+	//cout << endl << "demoArrayFunctions()..." << endl;
+	//demoArrayFunctions();
 
-	//cout << endl << "demoArrayReverseAndCompare()..." << endl;
-	//demoArrayReverseAndCompare();
+	//cout << endl << "demoArrayCompare()..." << endl;
+	//demoArrayCompare();
+
+	//demoArrayPrintReverse();
 
 	cout << endl << "demoArrayCompareReverse()..." << endl;
 	demoArrayCompareReverse();
@@ -50,25 +53,60 @@ int main()
 	demoArrayConcat();
 }
 
+void demoArrayPrintReverse()
+{
+	double* pArray = new double[3]; //get a pointer to first space in an array of 3 doubles
+	pArray[0] = 1.45;
+	pArray[1] = 12.56;
+	pArray[2] = 111.6;
+	print_reverse(pArray, 3);
+}
+
 void demoArrayCompareReverse()
 {
+	int* pArray1 = new int[3];
+	pArray1[0] = 1;
+	pArray1[1] = 12;
+	pArray1[2] = 111;
+
+	int* pArray2 = new int[3];
+	pArray2[0] = 111;
+	pArray2[1] = 12;
+	pArray2[2] = 1;
+
+	cout << "compare reverse: " << compare_reverse(pArray1, 3, pArray2, 3) << endl;
 }
 
 void demoArrayConcat()
 {
+	int* pArray1 = new int[3];
+	pArray1[0] = 1;
+	pArray1[1] = 2;
+	pArray1[2] = 3;
+
+	int* pArray2 = new int[5];
+	pArray2[0] = 15;
+	pArray2[1] = 20;
+	pArray2[2] = 25;
+	pArray2[3] = 30;
+	pArray2[4] = 35;
+
+	int* resultArr = concat(pArray1, 3, pArray2, 5);
+	print(resultArr, 8);
 }
 
-void demoArrayReverseAndCompare()
+void demoArrayCompare()
 {
-	int* pArray1 = new int[3];
+	int dimension = 3;
+	int* pArray1 = new int[dimension];
 	pArray1[0] = 10; pArray1[1] = 100; pArray1[2] = 1000;
 
-	int* pArray2 = new int[3];
+	int* pArray2 = new int[dimension];
 	pArray2[0] = 10; pArray2[1] = 100; pArray2[2] = 1000;
 
-	int result = compare(pArray1, 3, pArray2, 3);
+	int result = compare(pArray1, dimension, pArray2, dimension);
 
-	if (result == 3)
+	if (result == dimension)
 		cout << "No difference exists in the two arrays" << endl;
 	else
 		cout << "Arrays are different at index " << result << endl;
@@ -131,6 +169,8 @@ void demoArrayInstanciation2()
 	//cout << "How many years do you want to store?";
 	//cin >> dimension;
 	//int years[dimension] = { 2019,1989,2015,2001 };
+
+	//string dow[7] = { "m",.. };
 
 	int years[4] = { 2019,1989,2015,2001 };
 	years[2] = 2016;
