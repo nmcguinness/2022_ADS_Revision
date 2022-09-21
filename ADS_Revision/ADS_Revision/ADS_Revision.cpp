@@ -14,6 +14,8 @@ void demoArrayInstanciation2();
 void demoArrayUsingPointer();
 void demoArrayFunctions();
 void demoArrayReverseAndCompare();
+void demoArrayCompareReverse();
+void demoArrayConcat();
 
 int main()
 {
@@ -38,8 +40,22 @@ int main()
 	/*cout << endl << "demoArrayFunctions()..." << endl;
 	demoArrayFunctions();*/
 
-	cout << endl << "demoArrayReverseAndCompare()..." << endl;
-	demoArrayReverseAndCompare();
+	//cout << endl << "demoArrayReverseAndCompare()..." << endl;
+	//demoArrayReverseAndCompare();
+
+	cout << endl << "demoArrayCompareReverse()..." << endl;
+	demoArrayCompareReverse();
+
+	cout << endl << "demoArrayConcat()..." << endl;
+	demoArrayConcat();
+}
+
+void demoArrayCompareReverse()
+{
+}
+
+void demoArrayConcat()
+{
 }
 
 void demoArrayReverseAndCompare()

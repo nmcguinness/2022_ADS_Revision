@@ -70,6 +70,7 @@ bool compare_reverse(int* pFirst, int lengthFirst, int* pSecond, int lengthSecon
 	//check for nullptr
 	//check for non-equal lengths
 	//read up on first, read down on second
+	return false;
 }
 
 //concat two arrays of same type
@@ -80,4 +81,5 @@ int* concat(int* pFirst, int lengthFirst, int* pSecond, int lengthSecond)
 	//add pFirst to new array
 	//add pSecond to new array
 	//return new array address
+	return nullptr;
 }
