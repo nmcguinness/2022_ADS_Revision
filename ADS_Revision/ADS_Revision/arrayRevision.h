@@ -88,9 +88,31 @@ bool compare_reverse(int* pFirst, int lengthFirst, int* pSecond, int lengthSecon
 int* concat(int* pFirst, int lengthFirst, int* pSecond, int lengthSecond)
 {
 	//check for nullptr
+	if (pFirst == nullptr || pSecond == nullptr)
+		throw invalid_argument("One or more array is null!");
+
+	//check for non-equal lengths
+	if (lengthFirst == 0 || lengthSecond == 0)
+		throw invalid_argument("One or more arrays is empty!");
+
 	//make a new array - of what size?
+	int concatLength = lengthFirst + lengthSecond;
+	int* pArrayConcat = new int[concatLength];
+
 	//add pFirst to new array
+	for (int i = 0; i < lengthFirst; i++)
+	{
+		pArrayConcat[i] = pFirst[i];
+	}
+
 	//add pSecond to new array
+	int j = 0;
+	for (int i = lengthFirst; i < concatLength; i++)
+	{
+		pArrayConcat[i] = pSecond[j];
+		j++;
+	}
+
 	//return new array address
-	return nullptr;
+	return pArrayConcat;
 }
