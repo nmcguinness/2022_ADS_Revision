@@ -29,5 +29,8 @@
     <ClInclude Include="ADS_Revision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="pdMemory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="ADS_Revision.h" />
     <ClInclude Include="arrayRevision.h" />
+    <ClInclude Include="pdMemory.h" />
     <ClInclude Include="revision.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

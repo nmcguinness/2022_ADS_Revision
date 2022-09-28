@@ -92,7 +92,7 @@ int* concat(int* pFirst, int lengthFirst, int* pSecond, int lengthSecond)
 		throw invalid_argument("One or more array is null!");
 
 	//check for non-equal lengths
-	if (lengthFirst == 0 || lengthSecond == 0)
+	if (lengthFirst <= 0 || lengthSecond <= 0)
 		throw invalid_argument("One or more arrays is empty!");
 
 	//make a new array - of what size?

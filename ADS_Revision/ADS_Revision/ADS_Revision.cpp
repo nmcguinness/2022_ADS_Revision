@@ -2,6 +2,7 @@
 #include "revision.h"
 #include "arrayRevision.h"
 #include "ADS_Revision.h"
+#include "pdMemory.h"
 
 using namespace std;
 
@@ -17,10 +18,11 @@ void demoArrayCompare();
 void demoArrayPrintReverse();
 void demoArrayCompareReverse();
 void demoArrayConcat();
+void demoGetTotalGeneric();
 
 int main()
 {
-	cout << endl << "demoSimpleFunction()..." << endl;
+	/*cout << endl << "demoSimpleFunction()..." << endl;
 	demoSimpleFunction();
 
 	cout << endl << "demoTryCatch()..." << endl;
@@ -51,7 +53,35 @@ int main()
 	demoArrayCompareReverse();
 
 	cout << endl << "demoArrayConcat()..." << endl;
-	demoArrayConcat();
+	demoArrayConcat();*/
+
+	cout << endl << "Revision Exercises..." << endl;
+	/*************************************************************/
+
+	cout << endl << "demoGetTotalGeneric()..." << endl;
+	demoGetTotalGeneric();
+}
+
+void demoGetTotalGeneric()
+{
+	double* pArray = new double[3]; //get a pointer to first space in an array of 3 doubles
+	pArray[0] = 10.2;
+	pArray[1] = 20.1;
+	pArray[2] = 30.3;
+
+	double sum = getTotal<double, double>(pArray, 3);
+	cout << "sum is " << sum << endl;
+
+	int* pArray2 = new int[3];
+	pArray2[0] = 111;
+	pArray2[1] = 12;
+	pArray2[2] = 1;
+
+	sum = getTotal<int, int>(pArray2, 3);
+	cout << "sum is " << sum << endl;
+
+	//Flower* pFlowerArr = new Flower[4];
+	//cout << getTotal<Flower, Flower>(pArray, 3);
 }
 
 void demoArrayPrintReverse()
