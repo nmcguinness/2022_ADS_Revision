@@ -33,3 +33,21 @@ S getTotal(T* pArray, int length) {
 
 	return sum;
 }
+
+//operators (e.g. ++, *, /) and operands (e.g. 5, 3, x, y)
+//unary operators (e.g. ++, --)
+//binary operators (e.g. +, %, - ,/)
+//ternary operator (e.g. (boolean exp) ? <true> : <false>
+int countEven(int* pArr, int length)
+{
+	int sum = 0;
+	for (auto i = 0; i < length; i++)
+	{
+		//	sum += (pArr[i] % 2 == 0) ? 1 : 0; //ternary operator
+		if (pArr[i] % 2 == 0)
+			sum++;
+	}
+	return sum;
+}
+
+//int countIf(T* pArr, int length, function<T> filter)

@@ -31,6 +31,7 @@ void demoArrayConcat();
 
 void exerciseGetTotal();
 void exerciseGetTotalGeneric();
+void exerciseGetMaximum();
 
 /************************** Revision - Classes & Operator Overloading ******************************/
 void exerciseClassesQuestion1();
@@ -88,8 +89,10 @@ int main()
 	//cout << endl << "/************************** Revision - Classes & Operator Overloading ******************************/" << endl;
 
 	//to do...
-	exerciseClassesQuestion1();
+	//exerciseClassesQuestion1();
 	//	exerciseClassesQuestion3();
+
+	exerciseGetMaximum();
 }
 
 /************************** Revision - Functions & Arrays ******************************/
@@ -352,6 +355,40 @@ void exerciseGetTotalGeneric()
 
 	sum = getTotal<int, int>(pArray2, 3);
 	cout << "sum is " << sum << endl;
+}
+
+void exerciseCountEven()
+{
+	int* myArr = new int[5];
+	myArr[0] = 12; myArr[1] = 3; myArr[2] = 6;
+	myArr[3] = 11; myArr[4] = 4;
+
+	int count = countEven(myArr, 5);
+	cout << "Nr even numbers: " << count << endl;
+}
+double* getMaximum(double* pArr, int length)
+{
+	double currentMax = std::numeric_limits<double>::min();
+
+	for (auto i = 0; i < length; i++)
+	{
+		if (pArr[i] > currentMax)
+		{
+			currentMax = pArr[i];
+		}
+	}
+	return &currentMax;
+}
+
+void exerciseGetMaximum()
+{
+	double* myArr = new double[4];
+	myArr[0] = -100;	myArr[1] = 2000;
+	myArr[2] = 6.6;		myArr[3] = 121.5;
+
+	double* max = getMaximum(myArr, 4);
+	cout << "addr max: " << max << endl;
+	cout << "de-reference max: " << *max << endl;
 }
 
 /************************** Revision - Classes & Operator Overloading ******************************/
