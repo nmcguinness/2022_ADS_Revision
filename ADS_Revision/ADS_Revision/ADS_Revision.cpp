@@ -1,12 +1,19 @@
 #include <iostream>
-#include "revision.h"
-#include "arrayRevision.h"
 #include "ADS_Revision.h"
-#include "pdMemory.h"
+
+//header files for general revision
+#include "GeneralRevision.h"
+#include "GeneralArrayRevision.h"
+
+//header files for exercise solutions
+#include "ExercisesRecursion.h"
+#include "ExercisesPointersMemory.h"
+#include "Flower.h"
 
 using namespace std;
 
-//function declaration
+/************************** Revision - Functions & Arrays ******************************/
+
 void demoSimpleFunction();
 void demoTryCatch();
 void demoSwaps();
@@ -18,11 +25,25 @@ void demoArrayCompare();
 void demoArrayPrintReverse();
 void demoArrayCompareReverse();
 void demoArrayConcat();
-void demoGetTotalGeneric();
+
+/************************** Revision - Pointers & Dynamic Memory ******************************/
+
+void exerciseGetTotal();
+void exerciseGetTotalGeneric();
+
+/************************** Revision - Classes & Operator Overloading ******************************/
+
+void exerciseClassesQuestion2();
+void exerciseClassesQuestion3();
+void classesQuestion4();
+void exerciseClassesQuestion5();
+void exerciseClassesTestingExtras();
 
 int main()
 {
-	/*cout << endl << "demoSimpleFunction()..." << endl;
+	cout << endl << "/************************** Revision - Functions & Arrays ******************************/" << endl;
+
+	cout << endl << "demoSimpleFunction()..." << endl;
 	demoSimpleFunction();
 
 	cout << endl << "demoTryCatch()..." << endl;
@@ -31,8 +52,8 @@ int main()
 	cout << endl << "demoSwaps()..." << endl;
 	demoSwaps();
 
-	cout << endl << "demoArrayUsingPointer()..." << endl;
-	demoArrayUsingPointer();
+	/*cout << endl << "demoArrayUsingPointer()..." << endl;
+	demoArrayUsingPointer();*/
 
 	cout << endl << "demoArrayInstanciation1()..." << endl;
 	demoArrayInstanciation1();
@@ -53,36 +74,22 @@ int main()
 	demoArrayCompareReverse();
 
 	cout << endl << "demoArrayConcat()..." << endl;
-	demoArrayConcat();*/
+	demoArrayConcat();
 
-	cout << endl << "Revision Exercises..." << endl;
-	/*************************************************************/
+	cout << endl << "/************************** Revision - Pointers & Dynamic Memory ******************************/" << endl;
+
+	cout << endl << "demoGetTotal()..." << endl;
+	exerciseGetTotal();
 
 	cout << endl << "demoGetTotalGeneric()..." << endl;
-	demoGetTotalGeneric();
+	exerciseGetTotalGeneric();
+
+	cout << endl << "/************************** Revision - Classes & Operator Overloading ******************************/" << endl;
+
+	//to do...
 }
 
-void demoGetTotalGeneric()
-{
-	double* pArray = new double[3]; //get a pointer to first space in an array of 3 doubles
-	pArray[0] = 10.2;
-	pArray[1] = 20.1;
-	pArray[2] = 30.3;
-
-	double sum = getTotal<double, double>(pArray, 3);
-	cout << "sum is " << sum << endl;
-
-	int* pArray2 = new int[3];
-	pArray2[0] = 111;
-	pArray2[1] = 12;
-	pArray2[2] = 1;
-
-	sum = getTotal<int, int>(pArray2, 3);
-	cout << "sum is " << sum << endl;
-
-	//Flower* pFlowerArr = new Flower[4];
-	//cout << getTotal<Flower, Flower>(pArray, 3);
-}
+/************************** Revision - Functions & Arrays ******************************/
 
 void demoArrayPrintReverse()
 {
@@ -200,6 +207,7 @@ void demoArrayCompare()
 	delete[] pArray1;
 	delete[] pArray2;
 }
+
 void demoSimpleFunction()
 {
 	cout << add(3, 4) << endl;
@@ -217,6 +225,7 @@ void demoTryCatch()
 		cout << "A bad thing happened!";
 	}
 }
+
 void demoSwaps()
 {
 	//move functions into header
@@ -242,7 +251,6 @@ void demoSwaps()
 	cout << "pA:" << *pA << ",pB:" << *pB << endl;
 }
 
-//demo array instanciation
 void demoArrayInstanciation1()
 {
 	int years[4]; //declare
@@ -251,6 +259,7 @@ void demoArrayInstanciation1()
 	years[2] = 2015;
 	years[3] = 2001;
 }
+
 void demoArrayInstanciation2()
 {
 	//we CANNOT dynamically dimension an array using this approach
@@ -308,4 +317,75 @@ void demoArrayFunctions()
 	{
 		cout << e.what() << endl;
 	}
+}
+
+/************************** Revision - Pointers & Dynamic Memory ******************************/
+
+void exerciseGetTotal()
+{
+	int* pArray = new int[3]; //get a pointer to first space in an array of 3 ints
+	pArray[0] = 10;
+	pArray[1] = 20;
+	pArray[2] = 30;
+
+	int sum = getTotal(pArray, 3);
+	cout << "sum is " << sum << endl;
+}
+
+void exerciseGetTotalGeneric()
+{
+	double* pArray = new double[3]; //get a pointer to first space in an array of 3 doubles
+	pArray[0] = 10.2;
+	pArray[1] = 20.1;
+	pArray[2] = 30.3;
+
+	double sum = getTotal<double, double>(pArray, 3);
+	cout << "sum is " << sum << endl;
+
+	int* pArray2 = new int[3];
+	pArray2[0] = 111;
+	pArray2[1] = 12;
+	pArray2[2] = 1;
+
+	sum = getTotal<int, int>(pArray2, 3);
+	cout << "sum is " << sum << endl;
+}
+
+/************************** Revision - Classes & Operator Overloading ******************************/
+
+void exerciseClassesQuestion2() {
+	cout << endl;
+	Flower f1("petunia", 4, 1.50);
+	cout << f1.getName() << "," << f1.getPrice() << endl;
+}
+
+void exerciseClassesQuestion3() {
+	cout << endl;
+	Flower f1("petunia", 4, 1.50);
+	Flower f2("lily", 8, 4.50);
+	cout << f1 << "," << f2 << endl;
+}
+
+void classesQuestion4() {
+	cout << endl;
+	Flower f1("petunia", 4, 1.50);
+	cout << f1 << endl;
+	f1 + 50;
+	cout << f1 << endl;
+}
+
+void exerciseClassesQuestion5() {
+	cout << endl;
+	Flower f1("petunia", 4, 1.50);
+	cout << f1 << endl;
+	f1++;
+	cout << f1 << endl;
+}
+
+void exerciseClassesTestingExtras()
+{
+	Flower f1("petunia", 4, 1.50);
+	cout << f1 << endl;
+	f1 += 10;
+	cout << f1 << endl;
 }

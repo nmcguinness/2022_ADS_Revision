@@ -18,18 +18,36 @@
     <ClCompile Include="ADS_Revision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Flower.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllKinds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="revision.h">
+    <ClInclude Include="ExercisesPointersMemory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="arrayRevision.h">
+    <ClInclude Include="ExercisesRecursion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ADS_Revision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pdMemory.h">
+    <ClInclude Include="GeneralArrayRevision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneralRevision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Flower.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllKinds.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
