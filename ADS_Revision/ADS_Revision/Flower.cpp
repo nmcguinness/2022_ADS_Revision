@@ -1,5 +1,5 @@
 #include "Flower.h"
-#include "utilities.h"
+//#include "utilities.h"
 
 //question 3
 ostream& operator<<(ostream& out, const Flower& flower) {
@@ -47,8 +47,8 @@ bool Flower::operator==(const Flower& other)
 {
 	//Note even though this is a more effective solution we
 	//are not fans of global constants - ESPSILON
-	return this->name == other.getName()
-		&& equalsWithin(this->price, other.getPrice(), EPSILON);
+	return this->name == other.getName();
+	//	&& equalsWithin(this->price, other.getPrice(), EPSILON);
 }
 
 string Flower::getName() const {

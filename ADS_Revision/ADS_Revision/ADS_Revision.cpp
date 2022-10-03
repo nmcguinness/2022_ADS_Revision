@@ -9,6 +9,7 @@
 #include "ExercisesRecursion.h"
 #include "ExercisesPointersMemory.h"
 #include "Flower.h"
+#include "AllKinds.h"
 
 using namespace std;
 
@@ -32,7 +33,7 @@ void exerciseGetTotal();
 void exerciseGetTotalGeneric();
 
 /************************** Revision - Classes & Operator Overloading ******************************/
-
+void exerciseClassesQuestion1();
 void exerciseClassesQuestion2();
 void exerciseClassesQuestion3();
 void classesQuestion4();
@@ -41,53 +42,54 @@ void exerciseClassesTestingExtras();
 
 int main()
 {
-	cout << endl << "/************************** Revision - Functions & Arrays ******************************/" << endl;
+	//cout << endl << "/************************** Revision - Functions & Arrays ******************************/" << endl;
 
-	cout << endl << "demoSimpleFunction()..." << endl;
-	demoSimpleFunction();
+	//cout << endl << "demoSimpleFunction()..." << endl;
+	//demoSimpleFunction();
 
-	cout << endl << "demoTryCatch()..." << endl;
-	demoTryCatch();
+	//cout << endl << "demoTryCatch()..." << endl;
+	//demoTryCatch();
 
-	cout << endl << "demoSwaps()..." << endl;
-	demoSwaps();
+	//cout << endl << "demoSwaps()..." << endl;
+	//demoSwaps();
 
-	cout << endl << "demoArrayUsingPointer()..." << endl;
-	demoArrayUsingPointer();
+	//cout << endl << "demoArrayUsingPointer()..." << endl;
+	//demoArrayUsingPointer();
 
-	cout << endl << "demoArrayInstanciation1()..." << endl;
-	demoArrayInstanciation1();
+	//cout << endl << "demoArrayInstanciation1()..." << endl;
+	//demoArrayInstanciation1();
 
-	cout << endl << "demoArrayInstanciation2()..." << endl;
-	demoArrayInstanciation2();
+	//cout << endl << "demoArrayInstanciation2()..." << endl;
+	//demoArrayInstanciation2();
 
-	cout << endl << "demoArrayFunctions()..." << endl;
-	demoArrayFunctions();
+	//cout << endl << "demoArrayFunctions()..." << endl;
+	//demoArrayFunctions();
 
-	cout << endl << "demoArrayCompare()..." << endl;
-	demoArrayCompare();
+	//cout << endl << "demoArrayCompare()..." << endl;
+	//demoArrayCompare();
 
-	cout << endl << "demoArrayPrintReverse()..." << endl;
-	demoArrayPrintReverse();
+	//cout << endl << "demoArrayPrintReverse()..." << endl;
+	//demoArrayPrintReverse();
 
-	cout << endl << "demoArrayCompareReverse()..." << endl;
-	demoArrayCompareReverse();
+	//cout << endl << "demoArrayCompareReverse()..." << endl;
+	//demoArrayCompareReverse();
 
-	cout << endl << "demoArrayConcat()..." << endl;
-	demoArrayConcat();
+	//cout << endl << "demoArrayConcat()..." << endl;
+	//demoArrayConcat();
 
-	cout << endl << "/************************** Revision - Pointers & Dynamic Memory ******************************/" << endl;
+	//cout << endl << "/************************** Revision - Pointers & Dynamic Memory ******************************/" << endl;
 
-	cout << endl << "demoGetTotal()..." << endl;
-	exerciseGetTotal();
+	//cout << endl << "demoGetTotal()..." << endl;
+	//exerciseGetTotal();
 
-	cout << endl << "demoGetTotalGeneric()..." << endl;
-	exerciseGetTotalGeneric();
+	//cout << endl << "demoGetTotalGeneric()..." << endl;
+	//exerciseGetTotalGeneric();
 
-	cout << endl << "/************************** Revision - Classes & Operator Overloading ******************************/" << endl;
+	//cout << endl << "/************************** Revision - Classes & Operator Overloading ******************************/" << endl;
 
 	//to do...
-	exerciseClassesQuestion3();
+	exerciseClassesQuestion1();
+	//	exerciseClassesQuestion3();
 }
 
 /************************** Revision - Functions & Arrays ******************************/
@@ -353,6 +355,18 @@ void exerciseGetTotalGeneric()
 }
 
 /************************** Revision - Classes & Operator Overloading ******************************/
+
+void exerciseClassesQuestion1() {
+	cout << endl;
+	AllKinds a1(1, 2, 3);
+	AllKinds a2(1, 2, 3);
+
+	if (a1 == a2)
+		cout << "a1 and a2 are the same!" << endl;
+
+	a1 += a2;
+	cout << "new a1 is" << a1 << endl;
+}
 
 void exerciseClassesQuestion2() {
 	cout << endl;
