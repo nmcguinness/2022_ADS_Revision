@@ -24,6 +24,9 @@
     <ClCompile Include="AllKinds.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pair.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ExercisesPointersMemory.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AllKinds.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pair.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

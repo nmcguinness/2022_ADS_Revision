@@ -52,8 +52,8 @@ int main()
 	cout << endl << "demoSwaps()..." << endl;
 	demoSwaps();
 
-	/*cout << endl << "demoArrayUsingPointer()..." << endl;
-	demoArrayUsingPointer();*/
+	cout << endl << "demoArrayUsingPointer()..." << endl;
+	demoArrayUsingPointer();
 
 	cout << endl << "demoArrayInstanciation1()..." << endl;
 	demoArrayInstanciation1();
@@ -87,6 +87,7 @@ int main()
 	cout << endl << "/************************** Revision - Classes & Operator Overloading ******************************/" << endl;
 
 	//to do...
+	exerciseClassesQuestion3();
 }
 
 /************************** Revision - Functions & Arrays ******************************/
