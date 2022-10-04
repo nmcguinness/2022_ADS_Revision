@@ -11,6 +11,9 @@
 #include "Flower.h"
 #include "AllKinds.h"
 
+//using this for function<>
+#include <functional>
+
 using namespace std;
 
 /************************** Revision - Functions & Arrays ******************************/
@@ -40,6 +43,8 @@ void exerciseClassesQuestion3();
 void classesQuestion4();
 void exerciseClassesQuestion5();
 void exerciseClassesTestingExtras();
+
+void demoUsingFunction1();
 
 int main()
 {
@@ -93,6 +98,8 @@ int main()
 	//	exerciseClassesQuestion3();
 
 	exerciseGetMaximum();
+
+	demoUsingFunction1();
 }
 
 /************************** Revision - Functions & Arrays ******************************/
@@ -368,7 +375,9 @@ void exerciseCountEven()
 }
 double* getMaximum(double* pArr, int length)
 {
-	double currentMax = std::numeric_limits<double>::min();
+	//double currentMax = std::numeric_limits<double>::min();
+
+	double currentMax = DBL_MIN;
 
 	for (auto i = 0; i < length; i++)
 	{
@@ -440,4 +449,30 @@ void exerciseClassesTestingExtras()
 	cout << f1 << endl;
 	f1 += 10;
 	cout << f1 << endl;
+}
+
+/************************** Advanced Work - Using function<> wrapper ******************************/
+
+bool isEven(int x) { return x % 2 == 0; }
+double myPower(double a, double b) { return pow(a, b); }
+double multiply(double x, double y) { return x * y; }
+
+/// @brief Demos use of the function<> class wrapper
+/// @see https://en.cppreference.com/w/cpp/utility/functional/function
+void demoUsingFunction1()
+{
+	//declaring a variable which will store addr of a function (takes int, returns bool)
+	function<bool(int)> myFunc;
+
+	//assigning the address (in RAM) of the function isEven to this variable
+	myFunc = isEven;
+
+	//now we can call the isEven function using myFunc
+	cout << myFunc(13) << endl;
+
+	function<double(double, double)> arithFunc = myPower;
+	cout << arithFunc(2, 3) << endl; //8
+
+	arithFunc = multiply;
+	cout << arithFunc(2, 3) << endl;  //6
 }
