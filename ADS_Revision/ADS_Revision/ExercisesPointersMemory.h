@@ -50,4 +50,13 @@ int countEven(int* pArr, int length)
 	return sum;
 }
 
-//int countIf(T* pArr, int length, function<T> filter)
+int countIf(int* pArr, int length, function<bool(int)> filter)
+{
+	int matches = 0;
+	for (int i = 0; i < length; i++)
+	{
+		if (filter(pArr[i]))
+			matches++;
+	}
+	return matches;
+}

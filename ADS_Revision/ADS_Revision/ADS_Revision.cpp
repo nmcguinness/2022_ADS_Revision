@@ -476,3 +476,19 @@ void demoUsingFunction1()
 	arithFunc = multiply;
 	cout << arithFunc(2, 3) << endl;  //6
 }
+
+void demoUsingFunctionAsParameter()
+{
+	//make an array
+	int* ages = new int[6];
+	ages[0] = 19; ages[1] = 21; ages[2] = 24;
+	ages[3] = 36; ages[4] = 31; ages[5] = 17;
+
+	function<bool(int)> f = isEven;
+
+	int count = countIf(ages, 6, f);
+	cout << count << " numbers matched the filter!" << endl;
+
+	//release the array to the garbage collector
+	delete[] ages;
+}
