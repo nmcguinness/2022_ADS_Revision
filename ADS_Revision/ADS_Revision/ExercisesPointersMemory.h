@@ -4,6 +4,7 @@
 /// Revision Exercises - Selected Solutions - Pointer & Dynamic Memory
 
 #include <stdexcept>
+#include <functional>
 
 /// @brief Sums the values in an integer array
 /// @param pArray Pointer to an int array
@@ -50,6 +51,30 @@ int countEven(int* pArr, int length)
 	return sum;
 }
 
+/// @brief Returns the maximum in an array of doubles
+/// @param pArr
+/// @param length
+/// @return double value which is max
+double getMaximum(double* pArr, int length)
+{
+	//set variable to store max to be smallest possible value to start with
+	double currentMax = DBL_MIN;
+
+	for (auto i = 0; i < length; i++)
+	{
+		if (pArr[i] > currentMax)
+			currentMax = pArr[i];
+	}
+	return currentMax;
+}
+
+/************************** Advanced - Not Included in Exercises - Using function<> class wrapper ******************************/
+
+/// @brief Counts the number of integers in the array that return true when passed through the filter function
+/// @param pArr
+/// @param length
+/// @param filter
+/// @return
 int countIf(int* pArr, int length, function<bool(int)> filter)
 {
 	int matches = 0;

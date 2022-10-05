@@ -1,3 +1,5 @@
+/// @brief Revision Exercises and Selected Solutions
+
 #include <iostream>
 #include "ADS_Revision.h"
 
@@ -42,64 +44,96 @@ void exerciseClassesQuestion2();
 void exerciseClassesQuestion3();
 void classesQuestion4();
 void exerciseClassesQuestion5();
-void exerciseClassesTestingExtras();
+void exerciseClassesTestingExtraOperators();
 
-void demoUsingFunction1();
+/************************** Advanced - Not Included in Exercises - Using function<> class wrapper ******************************/
+
+void demoUsingFunctionClassWrapper();
+void demoUsingFunctionAsParameter();
+void demoUsingLambdaAsParameter();
+void demoUsingLambdaWithCaptureClause();
 
 int main()
 {
-	//cout << endl << "/************************** Revision - Functions & Arrays ******************************/" << endl;
+	cout << endl << "/************************** Revision - Functions & Arrays ******************************/" << endl;
 
-	//cout << endl << "demoSimpleFunction()..." << endl;
-	//demoSimpleFunction();
+	cout << endl << "demoSimpleFunction()..." << endl;
+	demoSimpleFunction();
 
-	//cout << endl << "demoTryCatch()..." << endl;
-	//demoTryCatch();
+	cout << endl << "demoTryCatch()..." << endl;
+	demoTryCatch();
 
-	//cout << endl << "demoSwaps()..." << endl;
-	//demoSwaps();
+	cout << endl << "demoSwaps()..." << endl;
+	demoSwaps();
 
-	//cout << endl << "demoArrayUsingPointer()..." << endl;
-	//demoArrayUsingPointer();
+	cout << endl << "demoArrayUsingPointer()..." << endl;
+	demoArrayUsingPointer();
 
-	//cout << endl << "demoArrayInstanciation1()..." << endl;
-	//demoArrayInstanciation1();
+	cout << endl << "demoArrayInstanciation1()..." << endl;
+	demoArrayInstanciation1();
 
-	//cout << endl << "demoArrayInstanciation2()..." << endl;
-	//demoArrayInstanciation2();
+	cout << endl << "demoArrayInstanciation2()..." << endl;
+	demoArrayInstanciation2();
 
-	//cout << endl << "demoArrayFunctions()..." << endl;
-	//demoArrayFunctions();
+	cout << endl << "demoArrayFunctions()..." << endl;
+	demoArrayFunctions();
 
-	//cout << endl << "demoArrayCompare()..." << endl;
-	//demoArrayCompare();
+	cout << endl << "demoArrayCompare()..." << endl;
+	demoArrayCompare();
 
-	//cout << endl << "demoArrayPrintReverse()..." << endl;
-	//demoArrayPrintReverse();
+	cout << endl << "demoArrayPrintReverse()..." << endl;
+	demoArrayPrintReverse();
 
-	//cout << endl << "demoArrayCompareReverse()..." << endl;
-	//demoArrayCompareReverse();
+	cout << endl << "demoArrayCompareReverse()..." << endl;
+	demoArrayCompareReverse();
 
-	//cout << endl << "demoArrayConcat()..." << endl;
-	//demoArrayConcat();
+	cout << endl << "demoArrayConcat()..." << endl;
+	demoArrayConcat();
 
-	//cout << endl << "/************************** Revision - Pointers & Dynamic Memory ******************************/" << endl;
+	cout << endl << "/************************** Revision - Pointers & Dynamic Memory ******************************/" << endl;
 
-	//cout << endl << "demoGetTotal()..." << endl;
-	//exerciseGetTotal();
+	cout << endl << "demoGetTotal()..." << endl;
+	exerciseGetTotal();
 
-	//cout << endl << "demoGetTotalGeneric()..." << endl;
-	//exerciseGetTotalGeneric();
+	cout << endl << "demoGetTotalGeneric()..." << endl;
+	exerciseGetTotalGeneric();
 
-	//cout << endl << "/************************** Revision - Classes & Operator Overloading ******************************/" << endl;
-
-	//to do...
-	//exerciseClassesQuestion1();
-	//	exerciseClassesQuestion3();
-
+	cout << endl << "exerciseGetMaximum()..." << endl;
 	exerciseGetMaximum();
 
-	demoUsingFunction1();
+	cout << endl << "/************************** Revision - Classes & Operator Overloading ******************************/" << endl;
+
+	cout << endl << "exerciseClassesQuestion1()..." << endl;
+	exerciseClassesQuestion1();
+
+	cout << endl << "exerciseClassesQuestion2()..." << endl;
+	exerciseClassesQuestion2();
+
+	cout << endl << "exerciseClassesQuestion3()..." << endl;
+	exerciseClassesQuestion3();
+
+	cout << endl << "classesQuestion4()..." << endl;
+	classesQuestion4();
+
+	cout << endl << "exerciseClassesQuestion5()..." << endl;
+	exerciseClassesQuestion5();
+
+	cout << endl << "exerciseClassesTestingExtras()..." << endl;
+	exerciseClassesTestingExtraOperators();
+
+	cout << endl << "/************************** Revision - Classes & Operator Overloading ******************************/" << endl;
+
+	cout << endl << "demoUsingFunctionClassWrapper()..." << endl;
+	demoUsingFunctionClassWrapper();
+
+	cout << endl << "demoUsingFunctionAsParameter()..." << endl;
+	demoUsingFunctionAsParameter();
+
+	cout << endl << "demoUsingLambdaAsParameter()..." << endl;
+	demoUsingLambdaAsParameter();
+
+	cout << endl << "demoUsingLambdaWithCaptureClause()..." << endl;
+	demoUsingLambdaWithCaptureClause();
 }
 
 /************************** Revision - Functions & Arrays ******************************/
@@ -295,9 +329,6 @@ void demoArrayUsingPointer()
 	cin >> dimension;
 	int* pArray = new int[dimension]; //get a pointer to 4 spaces
 
-	//pArray is just the address of the first integer in array
-	cout << pArray << endl;
-
 	for (int i = 0; i < dimension; i++)
 	{
 		cout << "Enter year:" << (i + 1) << endl;
@@ -321,6 +352,7 @@ void demoArrayFunctions()
 	int* myNewArray = initialize(5, 100);
 	print(myNewArray, 5);
 
+	delete[] myData;
 	delete[] myNewArray;
 
 	try {
@@ -343,6 +375,8 @@ void exerciseGetTotal()
 
 	int sum = getTotal(pArray, 3);
 	cout << "sum is " << sum << endl;
+
+	delete[] pArray;
 }
 
 void exerciseGetTotalGeneric()
@@ -362,6 +396,9 @@ void exerciseGetTotalGeneric()
 
 	sum = getTotal<int, int>(pArray2, 3);
 	cout << "sum is " << sum << endl;
+
+	delete[] pArray;
+	delete[] pArray2;
 }
 
 void exerciseCountEven()
@@ -372,32 +409,21 @@ void exerciseCountEven()
 
 	int count = countEven(myArr, 5);
 	cout << "Nr even numbers: " << count << endl;
-}
-double* getMaximum(double* pArr, int length)
-{
-	//double currentMax = std::numeric_limits<double>::min();
 
-	double currentMax = DBL_MIN;
-
-	for (auto i = 0; i < length; i++)
-	{
-		if (pArr[i] > currentMax)
-		{
-			currentMax = pArr[i];
-		}
-	}
-	return &currentMax;
+	delete[] myArr;
 }
 
+/// @brief Note I have changed this question to return a DOUBLE maximum and NOT a pointer to a DOUBLE
 void exerciseGetMaximum()
 {
 	double* myArr = new double[4];
 	myArr[0] = -100;	myArr[1] = 2000;
 	myArr[2] = 6.6;		myArr[3] = 121.5;
 
-	double* max = getMaximum(myArr, 4);
-	cout << "addr max: " << max << endl;
-	cout << "de-reference max: " << *max << endl;
+	double max = getMaximum(myArr, 4);
+	cout << "value of max: " << max << endl;
+
+	delete[] myArr;
 }
 
 /************************** Revision - Classes & Operator Overloading ******************************/
@@ -443,7 +469,7 @@ void exerciseClassesQuestion5() {
 	cout << f1 << endl;
 }
 
-void exerciseClassesTestingExtras()
+void exerciseClassesTestingExtraOperators()
 {
 	Flower f1("petunia", 4, 1.50);
 	cout << f1 << endl;
@@ -451,15 +477,33 @@ void exerciseClassesTestingExtras()
 	cout << f1 << endl;
 }
 
-/************************** Advanced Work - Using function<> wrapper ******************************/
+/************************** Advanced - Not Included in Exercises - Using function<> class wrapper ******************************/
 
+/// @brief Returns true if x is even, otherwise odd
+/// @param x
+/// @return
 bool isEven(int x) { return x % 2 == 0; }
+
+/// @brief Returns a^b
+/// @param a
+/// @param b
+/// @return
 double myPower(double a, double b) { return pow(a, b); }
+
+/// @brief Returns product of two doubles
+/// @param x
+/// @param y
+/// @return Product of the two doubles
 double multiply(double x, double y) { return x * y; }
+
+/// @brief Returns true if x is within a HARD-CODED range of values :( We don't like hardcoded functions
+/// @param x
+/// @return
+bool isWithin(int x) { return (x >= 10 && x <= 20); }
 
 /// @brief Demos use of the function<> class wrapper
 /// @see https://en.cppreference.com/w/cpp/utility/functional/function
-void demoUsingFunction1()
+void demoUsingFunctionClassWrapper()
 {
 	//declaring a variable which will store addr of a function (takes int, returns bool)
 	function<bool(int)> myFunc;
@@ -477,18 +521,77 @@ void demoUsingFunction1()
 	cout << arithFunc(2, 3) << endl;  //6
 }
 
+/// @brief Demo use of the function<> class wrapper as a parameter to countIf
 void demoUsingFunctionAsParameter()
 {
 	//make an array
 	int* ages = new int[6];
-	ages[0] = 19; ages[1] = 21; ages[2] = 24;
+	ages[0] = 19; ages[1] = 24; ages[2] = 24;
 	ages[3] = 36; ages[4] = 31; ages[5] = 17;
 
 	function<bool(int)> f = isEven;
-
 	int count = countIf(ages, 6, f);
-	cout << count << " numbers matched the filter!" << endl;
+	cout << count << " numbers matched isEven filter!" << endl;
+
+	f = isWithin;
+	count = countIf(ages, 6, f);
+	cout << count << " numbers matched isWithin filter!" << endl;
 
 	//release the array to the garbage collector
 	delete[] ages;
+}
+
+/// @brief Demo replacing the hard-coded function (e.g. isEven, isWithin) with a lambda expression
+/// @see https://www.programiz.com/cpp-programming/lambda-expression
+/// @see https://www.geeksforgeeks.org/lambda-expression-in-c/
+void demoUsingLambdaAsParameter()
+{
+	//make an array
+	int* ages = new int[6];
+	ages[0] = 19; ages[1] = 24; ages[2] = 24;
+	ages[3] = 36; ages[4] = 31; ages[5] = 17;
+
+	function<bool(int)> pred = [](int x) { return x % 2 == 0; };
+
+	int count = countIf(ages, 6, pred);
+	cout << count << " numbers matched lambda filter!" << endl;
+
+	//release the array to the garbage collector
+	delete[] ages;
+}
+
+/// @brief Demo passing parameters into a lambda (i.e. lo, hi) through the [capture clause]
+/// @see https://www.programiz.com/cpp-programming/lambda-expression
+/// @see https://www.geeksforgeeks.org/lambda-expression-in-c/
+void demoUsingLambdaWithCaptureClause()
+{
+	//make an array
+	int* ages = new int[6];
+	ages[0] = 19; ages[1] = 24; ages[2] = 24;
+	ages[3] = 36; ages[4] = 31; ages[5] = 17;
+
+	//notice how we can pass lo and hi in through the [] - called the capture clause
+	int lo = 20;
+	int hi = 30;
+	function<bool(int)> pred = [lo, hi](int x) { return (x >= lo && x <= hi);	};
+
+	int count = countIf(ages, 6, pred);
+	cout << count << " numbers matched lambda filter!" << endl;
+
+	//release the array to the garbage collector
+	delete[] ages;
+}
+
+/************************** Advanced - Not Included in Exercises - Explaining a predicate vs an action ******************************/
+
+//Predicate is a function that takes 1 parameter and returns a bool (e.g. IsEven, IsWithin)
+bool isEmailValid(string email)
+{
+	//check the email
+	return true;
+}
+//Action is a function that takes N parameters and returns void (e.g. print)
+void playSound(int duration, float frequency)
+{
+	//	BEEP(frequency, duration);
 }
